@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+
+        <!-- PRELOAD -->
+        <link rel="preload" src="./assets/js/script.js" type="text/javascript" as="script"/>
+        <link rel="preload" src="./assets/js/agenda.js" type="text/javascript" as="script"/>
+        <link rel="preload" src="./assets/css/style.css" type="text/css" as="stylesheet"/>
+        <link rel="preload" src="./assets/css/agenda.css" type="text/css" as="stylesheet"/>
+        <link rel="preload" src="./assets/css/ubuntu.css" type="text/css" as="stylesheet"/>
+        <link rel="preload" src="./assets/css/ubuntu/Ubuntu-BI.ttf" type="font/sfnt" as="font"/>
+        <link rel="preload" src="./assets/css/ubuntu/Ubuntu-RI.ttf" type="font/sfnt" as="font"/>
+        <link rel="preload" src="./assets/css/ubuntu/Ubuntu-B.ttf" type="font/sfnt" as="font"/>
+        <link rel="preload" src="./assets/css/ubuntu/Ubuntu-R.ttf" type="font/sfnt" as="font"/>
+
+        <!-- STATIC BETWEEN PAGES -->
+        <meta name="theme-color" content="#00FFFF">
+        <meta name="author" content="PRIZ ;]" />
+
+        <meta name="twitter:site" content="@VoxelPrismatic">
+        <meta name="twitter:creator" content="@VoxelPrismatic">
+        <meta name="twitter:card" content="summary">
+<!--         <meta name="twitter:image" content="https://voxelprismatic.github.io/prizm.dev/assets/image/webp/favi/priz_cyan.webp" /> -->
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://voxelprismatic.github.io/scheduler/" />
+        <meta property="og:site_name" content="PRIZ ;]">
+
+<!--         <meta property="og:image" content="https://voxelprismatic.github.io/prizm.dev/assets/image/webp/favi/priz_cyan.webp" /> -->
+        <meta property="og:image:type" content="image/webp" />
+        <meta property="og:image:width" content="256" />
+        <meta property="og:image:height" content="256" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!--         <link rel="icon" type="image/png" href="/prizm.dev/assets/image/favicon.png" /> -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/css/agenda.css" />
+
+        <!-- DYNAMIC BETWEEN PAGES -->
+        <meta property="og:title" content="Agenda" id="title" />
+        <title>Agenda</title>
+        <meta property="og:description" content="Agenda, by PRIZ ;]" />
+        <meta name="description" content="Agenda, by PRIZ ;]" />
+        <meta name="keywords" content="sheduler, foss scheduler, organizer, voxelprismatic" />
+    </head>
+    <body>
+        <div class="card-cover">
+            <h1>Agenda</h1>
+            <div class="card-app">
+                <div id="timer-box">
+                    <div id="agenda-list" class="card-widget">
+                    </div>
+                    <div id="timer">
+                        <div id="countdown">
+                            --:00:00
+                        </div>
+                        <div id="until">
+                            <sm id='until-start' class="Dim"><i>Until</i></sm>&nbsp; <h3 id="until-name" class="Bright">Some Event</h3>&nbsp; <sm id='until-end' class="Dim"><i>starts</i></sm>
+                        </div>
+                        <input name="count-mode" type="radio" id="count-mode" value="1" onchange='localStorage.setItem("agenda_count_mode",Number(this.checked));refresh_timer()'></input><span onclick="this.previousElementSibling.click()">Remaining</span><br>
+                        <input name="count-mode" type="radio" id="count-mode2" value="0" onchange='localStorage.setItem("agenda_count_mode",Number(!this.checked));refresh_timer()'></input><span onclick="this.previousElementSibling.click()">Elapsed</span><br>
+                        <button id="evt-mode">Add event</button>
+                    </div>
+                    <div id="add-event" style="display:none">
+                        <textarea id="evt-name" placeholder="Event name" rows="1"></textarea><br>
+                        <textarea id="evt-desc" placeholder="Event description" rows="4"></textarea><br><br>
+                        Starts at: <input id="evt-start" type="datetime-local"></input><br>
+                        Ends at: <input id="evt-end" type="datetime-local"></input><br><br>
+                        Repeat
+                        <select id="evt-repeat">
+                            <option value="0">Never</option>
+                            <option value="1">Daily</option>
+                            <option value="2">Weekly</option>
+                            <option value="3">Monthly</option>
+                            <option value="4">Yearly</option>
+                        </select>
+                        <span id="repeat-0"><br></span>
+                        <span id="repeat-1">
+                            - Every
+                            <select id="evt-daily">
+                                <option value="1">Day</option>
+                                <option value="2">Other day</option>
+                                <option value="3">Third day</option>
+                                <option value="4">4 days</option>
+                                <option value="5">5 days</option>
+                                <option value="6">6 days</option>
+                            </select><br>
+                            Until <input id="evt-until-1" type="date"></input><br>
+                        </span>
+                        <span id="repeat-2">
+                            - Every <input id="evt-weekly" type="number" min="1" max="51" value="1" style="width: 48px;"> week<span id="evt-plural-2">s</span><br>
+                            Until <input id="evt-until-2" type="date"></input><br>
+                            <table id="evt-repeat-2">
+                            </table>
+                        </span>
+                        <span id="repeat-3">
+                            - Every <input id="evt-monthly" type="number" min="1" max="11" value="1" style="width: 48px;"> month<span id="evt-plural-3">s</span><br>
+                            Until <input id="evt-until-3" type="date"></input><br>
+                        </span>
+                        <span id="repeat-4">
+                            - Every <input id="evt-yearly" type="number" min="1" value="1" style="width: 48px;"> year<span id="evt-plural-4">s</span><br>
+                            Until <input id="evt-until-4" type="date"></input><br>
+                            <table id="evt-repeat-4">
+                            </table>
+                        </span>
+                        Color: <input id="evt-color" type="color"></input><br>
+                        Edit event: <input id="evt-exist"></input><br>
+                        <button id="evt-add" onclick="add_agenda()">Add event</button>
+                        <button id="evt-rm" onclick="rm_agenda()">Delete event</button>
+                        <button id="evt-cancel">Cancel</button>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <script type="text/javascript" src="./assets/js/script.js"></script>
+        <script type="text/javascript" src="./assets/js/agenda.js"></script>
+    </body>
+</head>

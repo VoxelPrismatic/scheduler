@@ -1,0 +1,77 @@
+div#timer-box {
+    display: flex;
+    height: calc(100% - 48px);
+    width: calc(100% - 16px);
+}
+
+div#agenda-list {
+    height: 100%;
+    width: 35%;
+    overflow-y: auto;
+}
+
+div#timer, div#add-event {
+    align-self: center;
+}
+
+div#countdown {
+    font-family: "Ubuntu Mono";
+    font-size: 72px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--card-text-head);
+
+}
+h3#until-name {
+    display: inline-block;
+}
+
+.card-agenda {
+    background-color: var(--card-cover);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    div#agenda-list {
+        width: calc(100% - 16px);
+    }
+    div#timer-box {
+        display: block;
+        height: unset;
+    }
+}
+
+table {
+    background: var(--card-cover);
+    border-radius: 16px;
+    padding: 8px;
+    margin: 8px 0px;
+    height: 130px;
+    overflow-y: auto;
+    display: block;
+    width: min-content;
+}
+tbody {
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+}
+
+td.selectable {
+    background: var(--card-applet);
+    border-radius: 8px;
+    min-width: 24px;
+    height: 24px;
+    text-align: center;
+    cursor: pointer;
+} td.selectable[data-checked='1'] {
+    font-weight: bold;
+} table#evt-repeat-4 td.selectable {
+    min-width: 32px;
+}
+
+

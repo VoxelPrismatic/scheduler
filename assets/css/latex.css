@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "CMU Serif";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local("CMU Serif Medium Italic"),
+        local("CMUSerif-MediumItalic"),
+        local("CMUSerif-RI"),
+        url("/scheduler/assets/css/latex/Latex-RI.ttf");
+}
+
+@font-face {
+    font-family: "CMU Serif";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local("CMU Serif Bold Italic"),
+        local("CMUSerif-BoldItalic"),
+        local("CMUSerif-BI"),
+        url("/scheduler/assets/css/latex/Latex-BI.ttf");
+}
+
+@font-face {
+    font-family: "CMU Serif";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local("CMU Serif"),
+        local("CMUSerif-Medium"),
+        local("CMUSerif-R"),
+        url("/scheduler/assets/css/latex/Latex-R.ttf");
+}
+
+@font-face {
+    font-family: "CMU Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local("CMU Serif Bold"),
+        local("CMUSerif-Bold"),
+        local("CMUSerif-B"),
+        url("/scheduler/assets/css/latex/Latex-B.ttf");
+}
+
+@font-face {
+    font-family: "CMU Serif";
+    font-style: oblique;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local("CMU Serif Upright Italic"),
+        local("CMUSerif-UprightItalic"),
+        local("CMUSerif-UI"),
+        url("/scheduler/assets/css/latex/Latex-I.ttf");
+}
+
+--
+
+@font-face {
+    font-family: "CMU Typewriter";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local("CMU Typewriter Italic"),
+        local("CMUTypewriter-Italic"),
+        local("CMUTypewriter-RI"),
+        url("/scheduler/assets/css/latex/LatexMono-RI.ttf");
+}
+
+@font-face {
+    font-family: "CMU Typewriter";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local("CMU Typewriter Bold Italic"),
+        local("CMUTypewriter-BoldItalic"),
+        local("CMUTypewriter-BI"),
+        url("/scheduler/assets/css/latex/LatexMono-BI.ttf");
+}
+
+@font-face {
+    font-family: "CMU Typewriter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local("CMU Typewriter"),
+        local("CMUTypewriter-Medium"),
+        local("CMUTypewriter-M"),
+        url("/scheduler/assets/css/latex/LatexMono-R.ttf");
+}
+
+@font-face {
+    font-family: "CMU Typewriter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local("CMU Typewriter Bold"),
+        local("CMUTypewriter-Bold"),
+        local("CMUTypewriter-B"),
+        url("/scheduler/assets/css/latex/LatexMono-B.ttf");
+}
